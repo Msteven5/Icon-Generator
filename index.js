@@ -3,11 +3,11 @@ const fs = require('fs').promises
 
 
 const questions = [{
-    message: "What would you like to call your new icon?",
+    message: "What would you like to call your new logo?",
     name: "name"
 },
 {
-    message: "Please enter up to 3 characters for your Icon:",
+    message: "Please enter up to 3 characters for your logo:",
     name: "text"
 },
 {
@@ -16,7 +16,7 @@ const questions = [{
 },
 {
     type: "list",
-    message: "What shape would you like for your icon?",
+    message: "What shape would you like for your logo?",
     choices: ["Circle", "Square", "Triangle"],
     name: "shape"
 },
@@ -29,12 +29,12 @@ const userInput = () => {
     return inquirer.prompt(questions)
 }
 
-const generateIcon = async () => {
+const generatelogo = async () => {
     await userInput()
         .then((responses) => {
             switch (responses.shape) {
                 case "Circle":
-                    fs.writeFile(`Icons/${responses.name}.svg`,
+                    fs.writeFile(`Logos/${responses.name}.svg`,
                         `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="150" cy="100" r="80" fill="${responses.shapeColor}" />
                 <text x="150" y="125" font-size="60" text-anchor="middle" fill="${responses.textColor}">${responses.text}</text>
@@ -42,7 +42,7 @@ const generateIcon = async () => {
                     break;
 
                 case "Square":
-                    fs.writeFile(`Icons/${responses.name}.svg`,
+                    fs.writeFile(`Logos/${responses.name}.svg`,
                         `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                     <rect x="50" y="10" width="200" height="200" fill="${responses.shapeColor}" />
                     <text x="150" y="125" font-size="60" text-anchor="middle" fill="${responses.textColor}">${responses.text}</text>
@@ -51,7 +51,7 @@ const generateIcon = async () => {
                     break;
 
                 case "Triangle":
-                    fs.writeFile(`Icons/${responses.name}.svg`,
+                    fs.writeFile(`Logos/${responses.name}.svg`,
                         `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                   <polygon points="10,190 150,10 290,190" fill="${responses.shapeColor}" />
                   <text x="150" y="150" font-size="60" text-anchor="middle" fill="${responses.textColor}">${responses.text}</text>
@@ -61,4 +61,4 @@ const generateIcon = async () => {
         })
 }
 
-generateIcon();
+generatelogo();
