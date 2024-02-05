@@ -27,6 +27,7 @@ You can use this application to create small, simple logos or icons for whatever
 This coding project was done almost exlusively by myself, Michael Davidson. I had some starter code and a test written by the people at UTA in charge of the bootcamp I am currently attending at the time of creating this project.
 
 ## Tests
+[Video Walkthrough Link](https://drive.google.com/file/d/1z6reSkqlcvNIQflH0kK1179zylaVF4U9/view)
 
 You can test this application by running npm install jest and npm install inquirer@8.2.4 as those are the dependencies required for this application and from there, you must use the "node index.js" command to test out the functionality of the application itself.
 
