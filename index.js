@@ -8,7 +8,16 @@ const questions = [{
 },
 {
     message: "Please enter up to 3 characters for your logo:",
-    name: "text"
+    name: "text",
+    validate: (input) => {
+        if (input.length === 0) {
+            return "Please enter at least 1 character.";
+        }
+        if (input.length > 3) {
+            return "Please enter no more than 3 characters.";
+        }
+        return true;
+    }
 },
 {
     message: "What color would you like your text? Hexadecimals work as well:",
